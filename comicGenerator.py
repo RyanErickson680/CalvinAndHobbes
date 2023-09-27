@@ -5,7 +5,9 @@ import texter
 from PIL import Image
 
 def main():
-    df = pd.read_csv(r'CHid.csv')
+    #'~/Documents/CalvinAndHobbes/CHid.csv'
+    #'CHid.csv'
+    df = pd.read_csv(r'~/Documents/CalvinAndHobbes/CHid.csv')
 
     i = random.randint(0, 3696)
     id = str(df.iloc[i].item())
