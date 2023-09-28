@@ -23,8 +23,9 @@ def main():
     img.save("comic.png",'png', optimize=True, quality=70)
 
     #Sends texts to all willing (or unwilling) participants
-    texter.sendText('6128605585@vzwpix.com', 'comic.png')
-    #texter.sendText('6122809032@vzwpix.com', 'comic.png')
+    #For verizon, @vzwpix.com
+
+    #texter.sendText('[PHONE_NUMBER]@[CARRIER_ADDRESS]', 'comic.png')
 
 
 if __name__ == '__main__':    
