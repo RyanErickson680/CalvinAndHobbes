@@ -29,7 +29,7 @@ def sendText(to, image1, text=''):
 		msg['To'] = addr_to
 
 		#msgText.set_charset("ISO-8859-1")
-		msgText = MIMEText(text)
+		#msgText = MIMEText(text)
 		#msg.attach(msgText)
 
 		file1 = open(image1, 'rb')
@@ -46,6 +46,7 @@ def sendText(to, image1, text=''):
 		s.starttls()
 		s.ehlo()
 		s.login(smtp_user,smtp_pass)
-		s.sendmail(addr_from, addr_to.split(","), msg.as_string())
+		s.sendmail(addr_from, addr_to.split(','), msg.as_string())
+		s.sendmail(addr_from, addr_to.split(','), text)
 
 		s.quit()
