@@ -1,6 +1,9 @@
 import smtplib
 import datetime
 import time
+import os
+from dotenv import load_dotenv
+
 
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
@@ -12,10 +15,10 @@ addr_from = ' '
 
 smtp_server = 'smtp.gmail.com'
 smtp_port   = 587
-#smtp_user   = 'erirya680@gmail.com'
-smtp_user = 'daily.calvin.hobbes@gmail.com'
-#smtp_pass   = 'hwvi acnk ebxf yjkp'
-smtp_pass = 'lach bfct avii hqco'
+
+load_dotenv()
+smtp_user = os.getenv('SMTP_USER')
+smtp_pass = os.getenv('SMTP_PASS')
 
 #--------------------------------------------------------------
 

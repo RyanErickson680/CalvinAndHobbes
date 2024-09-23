@@ -30,12 +30,16 @@ def getDate(date):
 def main():
     #'~/Documents/CalvinAndHobbes/CHid.csv'
     #'CHid.csv'
-    df = pd.read_csv(r'~/Documents/CalvinAndHobbes/CHid.csv')
-    #df = pd.read_csv(r'CHid.csv')
+    #df = pd.read_csv(r'~/Documents/CalvinAndHobbes/CHid.csv')
+    df = pd.read_csv(r'CHid.csv')
 
     i = random.randint(0, 3696)
     id = str(df.iloc[i].item())
 
+    '''
+    Downloads an individual comic to send. No longer necessary
+    since I downloaded every comic locally
+    
     url = 'https://picayune.uclick.com/comics/ch/19' + id[2:4] + '/ch' + id[2:] + '.gif'
     img = requests.get(url)
 
@@ -47,12 +51,14 @@ def main():
     gif='comic.gif'
     img = Image.open(gif)
     img.save('comic.png','png', optimize=True, quality=70)
+    '''
+
 
     #Sends texts to all willing (or unwilling) participants
     #For verizon, @vzwpix.com
 
     #texter.sendText('[PHONE_NUMBER]@[CARRIER_ADDRESS]', 'comic.png', getDate(id))
-
+    texter.sendText('6128605585@vzwpix.com', f'comics/pngs/{id}.png', getDate(id))
 
 if __name__ == '__main__':    
     main()

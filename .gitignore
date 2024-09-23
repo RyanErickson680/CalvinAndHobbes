@@ -2,3 +2,7 @@ comic.gif
 comic.png
 __pycache__/
 .pyc
+.env
+comics/pngs/
+comics/gifs/
+__pycache__
